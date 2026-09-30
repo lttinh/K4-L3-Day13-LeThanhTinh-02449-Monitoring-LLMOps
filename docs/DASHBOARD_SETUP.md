@@ -33,6 +33,20 @@ python scripts/validate_dashboard.py
 
 Validator kiểm tra cấu trúc contract; nó không thể chứng minh biểu đồ trong ảnh dùng đúng dữ liệu. Evidence runtime vẫn bắt buộc.
 
+## Dashboard runtime đi kèm repository
+
+Dashboard không cần cài thêm thư viện và đọc trực tiếp `data/logs.jsonl`. Chạy từ thư mục gốc:
+
+```powershell
+python scripts/dashboard.py
+```
+
+Sau đó mở `http://127.0.0.1:8501`. Trang hiển thị đúng sáu panel, dùng cửa sổ 60 phút, tự refresh sau 30 giây và vẽ đường threshold nét đứt màu vàng. Có thể tạo một HTML snapshot để kiểm tra ngoại tuyến:
+
+```powershell
+python scripts/dashboard.py --output dashboard-preview.html
+```
+
 ## Cách kiểm tra runtime
 
 1. Lưu ảnh baseline và giá trị P95/error/cost hiện tại.

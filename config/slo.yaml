@@ -7,7 +7,12 @@ primary_slo:
     total_event: 'event == "request_received"'
   target_percent: 99.5
   error_budget_percent: 0.5
-  note: Học viên phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình. Ví dụ nếu có 10,000 request trong cửa sổ 28 ngày, error budget 0.5% nghĩa là tối đa 50 request được phép không đạt SLO.
+  baseline: 'CP1 workload: 10/10 successful requests, observed latency below 3000ms'
+  error_budget_example:
+    total_requests: 10000
+    allowed_bad_requests: 50
+    calculation: '10000 * (1 - 0.995) = 50'
+  note: 'A good event is a completed response within 3000ms. At 99.5%, the 28-day error budget is 0.5%; with 10,000 requests, at most 50 may fail or exceed 3000ms.'
 guardrails:
   error_rate_pct_max: 2
   daily_cost_usd_max: 2.5
