@@ -8,7 +8,7 @@
 - **MSSV:** 2A202602449
 - **Lớp:** K4-L3B
 - **Repository URL:** https://github.com/lttinh/K4-L3-Day13-LeThanhTinh-02449-Monitoring-LLMOps
-- **Commit SHA cuối:**
+- **Commit SHA cuối:** `4492b21d643b2a9ed737f652d65eb700f2d8d077` (commit chứa source, report và toàn bộ evidence đã kiểm thử)
 - **Challenge ID:** `day13-k4-l3b-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3b-02449`
 
@@ -87,11 +87,11 @@ Giữ đúng ba output text và năm ảnh dưới đây. Không tách thêm ả
 - **Cách hiểu luồng Metrics → Logs → Traces:** Metrics cho biết tail latency tăng trong cửa sổ thời gian; log cung cấp request đại diện `req-ed03a188`; trace cùng ID cho thấy retrieval mất 2,50/2,66 giây và generation chỉ mất 0,15 giây, từ đó định vị root cause.
 - **Vai trò của prompt version, token/cost, SLO hoặc rollback trong vận hành LLM:** Version và label giúp biết chính xác prompt nào tạo response và cho phép rollback nhanh; token/cost phát hiện thay đổi gây tốn tài nguyên; SLO/error budget biến chất lượng kỳ vọng thành ngưỡng đo và cảnh báo vận hành.
 - **Điều quan trọng nhất đã học:** Không kết luận sự cố từ một tín hiệu riêng lẻ; cần dùng metric để khoanh vùng, log để chọn request và trace để chứng minh span gây ảnh hưởng.
-- **Hạn chế hoặc phần chưa hoàn thành, nếu có:** Chưa mô phỏng vector store/LLM thật; ứng dụng dùng mock dependency nên các ngưỡng và chi phí chỉ đại diện cho bài lab. Repository URL đã có, còn commit SHA cuối và thao tác nộp LMS được cập nhật sau khi tạo commit nộp bài.
+- **Hạn chế hoặc phần chưa hoàn thành, nếu có:** Chưa mô phỏng vector store/LLM thật; ứng dụng dùng mock dependency nên các ngưỡng và chi phí chỉ đại diện cho bài lab. Thao tác nộp URL repository và SHA lên LMS/Codelabs được thực hiện ngoài repository.
 
 ## 9. Checklist trước khi nộp
 
-- [ ] Kết quả và evidence thuộc commit SHA cuối.
+- [x] Kết quả và evidence thuộc commit SHA cuối.
 - [x] Tất cả ảnh/output mở được bằng đường dẫn tương đối.
 - [x] Có đúng 3 file text và 5 ảnh runtime theo hướng dẫn.
 - [x] Incident evidence nối đúng metric → log → trace.
